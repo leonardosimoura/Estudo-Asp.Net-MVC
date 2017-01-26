@@ -1,0 +1,139 @@
+﻿@model MVCViews.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <fieldset>
+            <h3>Form</h3>
+
+            @using (Html.BeginForm("FormPadrao", "Home"))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>LoginViewModel</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </fieldset>
+    </div>
+
+    <div class="col-md-6">
+        <fieldset>
+            <h3>AJAX Form</h3>
+
+            <div id="DivLoading" style="display:none">
+                Aguarde....
+            </div>
+
+            <div id="DivUpdate" style="display:none">
+
+            </div>
+            @* Install Nuget Microsoft.jQuery.Unobtrusive.Ajax *@
+            @using (Ajax.BeginForm("FormAjax", "Home", new AjaxOptions
+            {
+                Confirm = "Deseja realmente enviar?",
+                HttpMethod = "POST",
+                LoadingElementId = "DivLoading",
+                LoadingElementDuration = 2000,
+                OnSuccess = "FormAjaxOnSuccess",
+                OnFailure = "FormAjaxOnFailure",
+                OnComplete = "FormAjaxOnComplete",
+                OnBegin = "FormAjaxOnBegin",
+                UpdateTargetId = "DivUpdate",
+                InsertionMode = InsertionMode.ReplaceWith
+            }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.EditorFor(m => m)
+            }
+        </fieldset>
+    </div>
+</div>
+
+<div class="row">
+    <fieldset>
+        <h3>Partial</h3>
+        <button onclick="btnPartialClick(this);">
+            <i class="glyphicon glyphicon-open"></i>
+        </button>
+        <div id="DivLoadPartial">
+
+        </div>
+    </fieldset>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        function FormAjaxOnSuccess(e) {
+            console.log({ metodo: "FormAjaxOnSuccess", result: e })
+            $("#DivUpdate").show();
+            $("#DivLoading").hide();
+
+        }
+
+        function FormAjaxOnFailure(e) {
+            console.log({ metodo: "FormAjaxOnFailure", result: e })
+        }
+
+        function FormAjaxOnComplete(e) {
+            console.log({ metodo: "FormAjaxOnComplete", result: e })
+            $("#DivLoading").hide();
+        }
+
+        function FormAjaxOnBegin(e) {
+            console.log({ metodo: "FormAjaxOnBegin", result: e })
+            $("#DivUpdate").hide();
+        }
+
+        function btnPartialClick(e) {
+            $(DivLoadPartial).load('@Url.Action("CarregarPartial")', {
+
+                Usuario:"LoadPartial",
+                Senha:"PartialLoad",
+
+            }, function (response, status, xhr) {
+                if (status == "error") {
+                    var msg = "Ocorreu um erro: ";
+                    alert(msg + xhr.status + " " + xhr.statusText);
+                }
+            });
+        }
+    </script>
+}
