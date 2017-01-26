@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using MVCSobrescrevendo.Custom;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MVCSobrescrevendo
@@ -8,6 +9,11 @@ namespace MVCSobrescrevendo
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //filters.Add(new MyExceptionFilter());
+
+            filters.Add(new MyCustomFilter2());
+
+
         }
     }
 }

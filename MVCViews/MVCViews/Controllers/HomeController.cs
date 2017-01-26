@@ -54,5 +54,21 @@ namespace MVCViews.Controllers
 
             return PartialView("_PartialLogin", model);
         }
+
+        [ChildActionOnly] // @Html.Action("CarregarChilddAction")
+        public ActionResult CarregarChildAction()
+        {
+
+            return PartialView("_CarregarChildAction");
+        }
+        
+        [NonAction] 
+        /* Por Default todos os metodos são acessados pela url ( Pois o MVC utiliza a System.Reflection internamente )
+         * com NonAction isso não ocorre com esse metodo
+        */
+        public int MetodoTeste()
+        {
+            return 1;
+        }
     }
 }

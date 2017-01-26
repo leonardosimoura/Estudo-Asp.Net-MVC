@@ -121,6 +121,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Custom\MyControllerFactory.cs" />
+    <Compile Include="Custom\MyCustomFilter.cs" />
+    <Compile Include="Custom\MyExceptionFilter.cs" />
+    <Compile Include="Custom\MyHttpHandler.cs" />
+    <Compile Include="Custom\MyHttpModule.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,6 +166,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\CustomError.cshtml" />
+    <Content Include="Views\Shared\ErrorDivideByZero.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
