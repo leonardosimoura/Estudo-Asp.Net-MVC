@@ -121,19 +121,24 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Custom\DateTimeModelBinder.cs" />
     <Compile Include="Custom\MyControllerFactory.cs" />
     <Compile Include="Custom\MyCustomFilter.cs" />
     <Compile Include="Custom\MyExceptionFilter.cs" />
     <Compile Include="Custom\MyHttpHandler.cs" />
     <Compile Include="Custom\MyHttpModule.cs" />
+    <Compile Include="Custom\MyModelBinder.cs" />
+    <Compile Include="Custom\MyRouteHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\UsuarioAniversario.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\google.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -168,10 +173,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\CustomError.cshtml" />
     <Content Include="Views\Shared\ErrorDivideByZero.cshtml" />
+    <None Include="Views\Home\ChromeIndex.cshtml" />
+    <Content Include="Views\Home\ModelBinder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

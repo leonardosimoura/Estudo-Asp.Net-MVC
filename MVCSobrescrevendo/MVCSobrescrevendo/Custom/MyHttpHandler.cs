@@ -7,17 +7,20 @@ namespace MVCSobrescrevendo.Custom
 {
     public class MyHttpHandler : IHttpHandler
     {
+        // <system.webServer>
+        //    <handlers><add verb = "*" path="*.sample" name="HelloWorldHandler"type="HelloWorldHandler"/></handlers>
+        // </system.webServer>
         public bool IsReusable
         {
             get
             {
-                throw new NotImplementedException();
+                return true;
             }
         }
 
         public void ProcessRequest(HttpContext context)
         {
-            throw new NotImplementedException();
+            var t = context;
         }
     }
 }

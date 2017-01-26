@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MVCSobrescrevendo.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,6 +16,15 @@ namespace MVCSobrescrevendo.Controllers
             this.mensagem = mensagem;
         }
         public ActionResult Index()
+        {
+            ViewBag.Mensagem = mensagem;
+            return View();
+        }
+
+
+        //Olhar nas rotas
+        // Url /Home/Index/1/2
+        public ActionResult ChromeIndex(string id , string id2)
         {
             ViewBag.Mensagem = mensagem;
             return View();
@@ -40,6 +51,47 @@ namespace MVCSobrescrevendo.Controllers
             return View();
         }
 
+
         
+        public ActionResult ModelBinder()
+        {
+
+            var listaAno = new List<string>();
+
+            for (int i = 1950; i <= 2017; i++)
+            {
+                listaAno.Add(i.ToString());
+            }
+
+            ViewBag.Ano = new SelectList(listaAno);
+
+            var listaMes = new List<object>();
+            for (int i = 1; i < 13; i++)
+            {
+                listaMes.Add(new { Mes = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i), MesValor = 1 });
+            }
+
+            ViewBag.Mes = new SelectList(listaMes, "MesValor", "Mes");
+
+            var listaDia = new List<string> ();
+
+            for (int i = 1; i <= 30; i++)
+            {
+                listaDia.Add(i.ToString());
+            }
+
+            ViewBag.Dia = new SelectList(listaDia);
+
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult ModelBinder(UsuarioAniversario model)
+        {
+            return RedirectToAction("Index");
+        }
+
     }
 }
