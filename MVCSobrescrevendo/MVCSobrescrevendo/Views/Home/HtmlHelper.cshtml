@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MVCSobrescrevendo.ViewModels.UsuarioAniversario>
+
+@{
+    ViewBag.Title = "Html Helper";
+}
+
+<h2>Html Helper</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@Html.Table(Model)
+
+@Html.Table(Model, "Usuario")

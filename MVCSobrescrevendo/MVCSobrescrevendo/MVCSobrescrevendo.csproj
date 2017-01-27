@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Custom\DateTimeModelBinder.cs" />
+    <Compile Include="Custom\HtmlTable.cs" />
     <Compile Include="Custom\MyControllerFactory.cs" />
     <Compile Include="Custom\MyCustomFilter.cs" />
     <Compile Include="Custom\MyExceptionFilter.cs" />
@@ -175,6 +176,7 @@
     <Content Include="Views\Shared\ErrorDivideByZero.cshtml" />
     <None Include="Views\Home\ChromeIndex.cshtml" />
     <Content Include="Views\Home\ModelBinder.cshtml" />
+    <Content Include="Views\Home\HtmlHelper.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

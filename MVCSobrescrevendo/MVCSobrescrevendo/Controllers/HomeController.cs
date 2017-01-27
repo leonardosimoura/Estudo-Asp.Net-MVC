@@ -87,6 +87,18 @@ namespace MVCSobrescrevendo.Controllers
         }
 
 
+        public ActionResult HtmlHelper()
+        {
+            var lista = new List<UsuarioAniversario>();
+
+            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+
+            return View(lista);
+        }
+
         [HttpPost]
         public ActionResult ModelBinder(UsuarioAniversario model)
         {
