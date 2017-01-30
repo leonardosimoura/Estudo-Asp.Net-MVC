@@ -11,7 +11,7 @@ namespace MVCSobrescrevendo
             filters.Add(new HandleErrorAttribute());
             //filters.Add(new MyExceptionFilter());
 
-            filters.Add(new MyCustomFilter2());
+            filters.Add(new MyCustomActionFilter());
 
 
         }

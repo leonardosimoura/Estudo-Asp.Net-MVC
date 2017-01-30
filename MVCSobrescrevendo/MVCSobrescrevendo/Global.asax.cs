@@ -17,13 +17,13 @@ namespace MVCSobrescrevendo
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ControllerBuilder.Current.SetControllerFactory(new MyControllerFactory("MVCSobrescrevendo.Controllers"));
+            ControllerBuilder.Current.SetControllerFactory(new MyCustomControllerFactory("MVCSobrescrevendo.Controllers"));
 
 
             ModelBinders.Binders.Add(typeof(DateTime), new DateTimeModelBinder("pt-BR"));
             ModelBinders.Binders.Add(typeof(DateTime?), new DateTimeModelBinder("pt-BR"));
 
-            ModelBinders.Binders.DefaultBinder = new MyModelBinder();
+            ModelBinders.Binders.DefaultBinder = new MyCustomModelBinder();
 
         }
 

@@ -123,13 +123,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Custom\DateTimeModelBinder.cs" />
     <Compile Include="Custom\HtmlTable.cs" />
-    <Compile Include="Custom\MyControllerFactory.cs" />
-    <Compile Include="Custom\MyCustomFilter.cs" />
-    <Compile Include="Custom\MyExceptionFilter.cs" />
-    <Compile Include="Custom\MyHttpHandler.cs" />
-    <Compile Include="Custom\MyHttpModule.cs" />
-    <Compile Include="Custom\MyModelBinder.cs" />
-    <Compile Include="Custom\MyRouteHandler.cs" />
+    <Compile Include="Custom\MyCustomControllerFactory.cs" />
+    <Compile Include="Custom\MyCustomActionFilter.cs" />
+    <Compile Include="Custom\MyCustomExceptionFilter.cs" />
+    <Compile Include="Custom\MyCustomHttpHandler.cs" />
+    <Compile Include="Custom\MyCustomHttpModule.cs" />
+    <Compile Include="Custom\MyCustomModelBinder.cs" />
+    <Compile Include="Custom\MyCustomRouteHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

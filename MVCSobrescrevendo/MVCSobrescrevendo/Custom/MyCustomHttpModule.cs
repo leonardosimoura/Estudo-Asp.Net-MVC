@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCSobrescrevendo.Custom
 {
-    public class MyHttpModule : IHttpModule
+    public class MyCustomHttpModule : IHttpModule
     {
         //IHttpModule Vem antes Do IHttpHandler
         //<modules>

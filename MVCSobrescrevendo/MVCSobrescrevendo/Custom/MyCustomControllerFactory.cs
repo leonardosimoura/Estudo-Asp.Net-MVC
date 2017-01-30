@@ -8,11 +8,11 @@ using System.Web.SessionState;
 
 namespace MVCSobrescrevendo.Custom
 {
-    public class MyControllerFactory : IControllerFactory
+    public class MyCustomControllerFactory : IControllerFactory
     {
 
         private readonly string _controllerNamespace;
-        public MyControllerFactory(string controllerNamespace)
+        public MyCustomControllerFactory(string controllerNamespace)
         {
             _controllerNamespace = controllerNamespace;
         }

@@ -8,7 +8,7 @@ using System.Web.SessionState;
 
 namespace MVCSobrescrevendo.Custom
 {
-    public class MyRouteHandler : MvcRouteHandler
+    public class MyCustomRouteHandler : MvcRouteHandler
     {
         protected override IHttpHandler GetHttpHandler(RequestContext requestContext)
         {

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCSobrescrevendo.Custom
 {
-    public class MyExceptionFilter : IExceptionFilter
+    public class MyCustomExceptionFilter : IExceptionFilter
     {
         void IExceptionFilter.OnException(ExceptionContext filterContext)
         {

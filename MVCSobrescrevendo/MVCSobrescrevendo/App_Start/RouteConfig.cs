@@ -23,7 +23,7 @@ namespace MVCSobrescrevendo
                 name: "Default2",
                 url: "{controller}/{action}/{id}/{id2}",
                 defaults: new { controller = "Home", action = "Index" }
-            ).RouteHandler = new MyRouteHandler();
+            ).RouteHandler = new MyCustomRouteHandler();
         }
     }
 }

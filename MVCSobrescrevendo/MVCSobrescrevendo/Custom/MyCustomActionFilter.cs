@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCSobrescrevendo.Custom
 {
-    public class MyCustomFilter : IActionFilter
+    public class MyCustomActionFilter : IActionFilter
     {
         void IActionFilter.OnActionExecuted(ActionExecutedContext filterContext)
         {
@@ -20,10 +20,10 @@ namespace MVCSobrescrevendo.Custom
         }
     }
 
-    public class MyCustomFilter2 : ActionFilterAttribute
+    public class MyCustomActionFilter2 : ActionFilterAttribute
     {
         Guid IdExecucao;
-        public MyCustomFilter2()
+        public MyCustomActionFilter2()
         {
            
         }

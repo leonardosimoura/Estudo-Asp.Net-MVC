@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MVCSobrescrevendo.Custom
 {
-    public class MyHttpHandler : IHttpHandler
+    public class MyCustomHttpHandler : IHttpHandler
     {
         // <system.webServer>
         //    <handlers><add verb = "*" path="*.sample" name="HelloWorldHandler"type="HelloWorldHandler"/></handlers>
