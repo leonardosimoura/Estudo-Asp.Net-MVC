@@ -121,15 +121,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Custom\DateTimeModelBinder.cs" />
-    <Compile Include="Custom\HtmlTable.cs" />
-    <Compile Include="Custom\MyCustomControllerFactory.cs" />
-    <Compile Include="Custom\MyCustomActionFilter.cs" />
-    <Compile Include="Custom\MyCustomExceptionFilter.cs" />
-    <Compile Include="Custom\MyCustomHttpHandler.cs" />
-    <Compile Include="Custom\MyCustomHttpModule.cs" />
-    <Compile Include="Custom\MyCustomModelBinder.cs" />
-    <Compile Include="Custom\MyCustomRouteHandler.cs" />
+    <Compile Include="Custom\ModelBinder\DateTimeModelBinder.cs" />
+    <Compile Include="Custom\HtmlHelper\HtmlTable.cs" />
+    <Compile Include="Custom\Filters\01 - MyCustomAuthorizationFilter.cs" />
+    <Compile Include="Custom\Controller\MyCustomControllerFactory.cs" />
+    <Compile Include="Custom\Filters\02 - MyCustomActionFilter.cs" />
+    <Compile Include="Custom\Filters\04 - MyCustomExceptionFilter.cs" />
+    <Compile Include="Custom\HttpHandler\MyCustomHttpHandler.cs" />
+    <Compile Include="Custom\HttpModule\MyCustomHttpModule.cs" />
+    <Compile Include="Custom\ModelBinder\MyCustomModelBinder.cs" />
+    <Compile Include="Custom\Filters\03 - MyCustomResultFilter.cs" />
+    <Compile Include="Custom\Route\MyCustomRouteHandler.cs" />
+    <Compile Include="Custom\View\MyCustomVirtualPathProviderViewEngine.cs" />
+    <Compile Include="Custom\View\MyCustomView.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

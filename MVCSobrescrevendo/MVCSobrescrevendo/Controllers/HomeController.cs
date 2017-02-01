@@ -17,6 +17,11 @@ namespace MVCSobrescrevendo.Controllers
         }
         public ActionResult Index()
         {
+            //Globalization
+            //HttpContext.GetGlobalResourceObject("", "");
+            //HttpContext.GetLocalResourceObject("", "");
+            var test = Request.UserHostName;
+            
             ViewBag.Mensagem = mensagem;
             return View();
         }

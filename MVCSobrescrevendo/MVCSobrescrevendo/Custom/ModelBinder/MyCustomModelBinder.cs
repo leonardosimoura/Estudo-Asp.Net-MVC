@@ -7,6 +7,14 @@ using System.Web.Mvc;
 
 namespace MVCSobrescrevendo.Custom
 {
+    public class MyCustomModelBinder2 : IModelBinder
+    {
+        object IModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
     public class MyCustomModelBinder : DefaultModelBinder
     {
         protected override void BindProperty(ControllerContext contContext, ModelBindingContext bindContext, PropertyDescriptor propDesc)

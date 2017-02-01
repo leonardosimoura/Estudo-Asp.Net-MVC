@@ -1,4 +1,5 @@
 ﻿using MVCSobrescrevendo.Custom;
+using MVCSobrescrevendo.Custom.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace MVCSobrescrevendo
 
             ModelBinders.Binders.DefaultBinder = new MyCustomModelBinder();
 
+            ViewEngines.Engines.Add(new MyCustomVirtualPathProviderViewEngine());
         }
 
         protected void Application_Error(object sender, EventArgs e)
