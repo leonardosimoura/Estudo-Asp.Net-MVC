@@ -10,7 +10,7 @@ namespace MVCSobrescrevendo.Controllers
 {
     public class HomeController : Controller
     {
-        private string mensagem;
+        private readonly string mensagem;
         public HomeController(string mensagem)
         {
             this.mensagem = mensagem;

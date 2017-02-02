@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
-using System.Web;
 using System.Web.Mvc;
 
-namespace MVCSobrescrevendo.Custom
+namespace MVCSobrescrevendo.Custom.ModelBinder
 {
     //Com o nome da Classe : ClassModelBinder
     public class DateTimeModelBinder : IModelBinder

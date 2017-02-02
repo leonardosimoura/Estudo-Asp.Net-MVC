@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace MVCSobrescrevendo.Custom
+namespace MVCSobrescrevendo.Custom.ModelBinder
 {
     public class MyCustomModelBinder2 : IModelBinder
     {

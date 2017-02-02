@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 
-namespace MVCSobrescrevendo.Custom
+namespace MVCSobrescrevendo.Custom.Filters
 {
     public class MyCustomResultFilter : IResultFilter
     {
