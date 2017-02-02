@@ -1,4 +1,4 @@
-﻿@model MVCSobrescrevendo.ViewModels.UsuarioAniversario
+﻿@model MVCSobrescrevendo.ViewModels.UsuarioAniversarioViewModel
 
 @{
     ViewBag.Title = "ModelBinder";
@@ -18,10 +18,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
             </div>
         </div>
+        
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnviarNotificacao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EnviarNotificacao, Model.EnviarNotificacaoList,new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnviarNotificacao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.DataAniversario, htmlAttributes: new { @class = "control-label col-md-2" })

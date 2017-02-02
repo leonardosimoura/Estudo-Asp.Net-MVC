@@ -87,28 +87,37 @@ namespace MVCSobrescrevendo.Controllers
 
             ViewBag.Dia = new SelectList(listaDia);
 
+            var usuario = new UsuarioAniversarioViewModel();
+            usuario.EnviarNotificacaoList = new SelectList(new List<object>
+            {
+                new {Text = "Sim", Value = "S"},
+                new {Text = "Não", Value = "N"},
+                new {Text = "Mostrar e Perguntar se mostra novamente", Value = "P"}
+            },"Value","Text");
 
-            return View();
+
+            return View(usuario);
         }
 
+        [HttpPost]
+        public ActionResult ModelBinder(UsuarioAniversarioViewModel model)
+        {
+            return RedirectToAction("Index");
+        }
 
         public ActionResult HtmlHelper()
         {
-            var lista = new List<UsuarioAniversario>();
+            var lista = new List<UsuarioAniversarioViewModel>();
 
-            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
-            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
-            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
-            lista.Add(new UsuarioAniversario() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+            lista.Add(new UsuarioAniversarioViewModel() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+            lista.Add(new UsuarioAniversarioViewModel() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+            lista.Add(new UsuarioAniversarioViewModel() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
+            lista.Add(new UsuarioAniversarioViewModel() { Usuario = "Leonardo", DataAniversario = new DateTime(1992, 11, 06) });
 
             return View(lista);
         }
 
-        [HttpPost]
-        public ActionResult ModelBinder(UsuarioAniversario model)
-        {
-            return RedirectToAction("Index");
-        }
+        
 
     }
 }
